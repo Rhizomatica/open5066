@@ -1,9 +1,6 @@
 /* hiios.h  -  Hiquu I/O Engine
  * Copyright (c) 2006 Sampo Kellomaki (sampo@iki.fi), All Rights Reserved.
- * This is confidential unpublished proprietary source code of the author.
- * NO WARRANTY, not even implied warranties. Contains trade secrets.
- * Distribution prohibited unless authorized in writing. See file COPYING.
- * $Id: hiios.h,v 1.10 2006/05/24 09:42:11 nito Exp $
+ * See file COPYING.
  *
  * 15.4.2006, created over Easter holiday --Sampo
  * 23.4.2006, DTS specific enhancements --Sampo
@@ -187,6 +184,8 @@ struct hi_proto {
 extern struct hi_proto prototab[];
 
 /* External APIs */
+
+void nonblock(int fd);
 
 struct hiios* hi_new_shuffler(int nfd, int npdu);
 struct hi_io* hi_open_listener(struct hiios* shf, struct hi_host_spec* hs, int proto);
