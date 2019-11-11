@@ -611,14 +611,10 @@ spec, I would be grateful.
 9 License and Disclaimers
 =========================
 
-Copyright (c) 2006 Sampo Kellomäki (sampo@iki.fi), All Rights Reserved.
-NO WARRANTY, not even implied warranties.
+Copyright (c) 2006 Sampo KellomÃ¤ki (sampo@iki.fi), All Rights Reserved.
 
 You may use this code under the terms of Gnu General Public License,
 version 2 (GPL 2).
-
-Given early phase of the project, I am open to justified suggestions
-about the licensing model.
 
 > IMPORTANT: If you use this code for actual radio emissions, beware
 > that this has neither been debugged yet nor validated, let alone
