@@ -1,9 +1,7 @@
 Open5066 - s5066d
 #################
-<<class: article!!!Open5066>>
-<<author: Sampo Kellomäki (sampo@iki.fi)>>
-<<cvsid: $Id: open5066.pd,v 1.10 2006/06/17 21:28:39 sampo Exp $>>
-<<history:0: 26.4.2006, started --Sampo>>
+
+This is a fork of the Open5066, originally written by Sampo Kellomaki.
 
 <<abstract:
 
@@ -691,52 +689,3 @@ SUCH DAMAGE.
 >>
 
 <<EOF: >>
-
-Antonio Prieto Martin writes:
-> When will open5066 be a product that we might consider ready for systems 
-> integration?
-
-Depends on maturity level and functionality you are looking for.
-
-Could you please briefly describe your application and which
-features of STANAG 5066 you would require?
-
-Please describe your developer skills, i.e. how much help I can
-expect from you?
-
-Currently our goal is to have first over the air communications
-happen in June (using non ARQ mode) and after that work on
-the arq mode. By end of summer it should be in pretty good shape.
-
---Sampo
-
-> sampo@symlabs.com 
-> 26/05/2006 20:42
-> 
-> Para
-> Antonio Prieto Martin <aprieto@amper.es>
-> cc
-> sampo@iki.fi, nito@qindel.es, kgreene@cellmail.com
-> Asunto
-> Re: open5066
-> 
-> Antonio Prieto Martin writes:
->> Will open5066 run on uCLinux?
-> 
-> Most likely, eventually. 
-> 
-> open5066 aims at minimal bloat and external library dependencies. It
-> seems likely the mini libc that is typically used in uCLinux machines
-> is sufficient. I know Felix Leitner's diet libc works. 
-> 
-> Only potential issue is that we use epoll(4), which is officially
-> supported on Linux 2.6 kernel series. I do not know if uCLinux can
-> use Linux 2.6. In case it can't, somebody would have to put in extra
-> effort to support conventional poll or select. 
-> 
-> CHeers,
->  --Sampo
-....................................................................
-Sampo Kellomaki ---> Chief Architect ---> DirectoryScript
-M: +351-918.731.007  F: +351-213.422.185  W: www.symlabs.com
-Customize directories -> LDAP SOAP Liberty SIP -> Directory Extender
