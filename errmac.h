@@ -20,6 +20,7 @@
 #define _macro_h
 
 #include <stdio.h>  /* For stderr */
+#include <pthread.h>
 
 /* CONFIG */
 

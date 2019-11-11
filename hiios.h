@@ -185,6 +185,8 @@ extern struct hi_proto prototab[];
 
 /* External APIs */
 
+void nonblock(int fd);
+
 struct hiios* hi_new_shuffler(int nfd, int npdu);
 struct hi_io* hi_open_listener(struct hiios* shf, struct hi_host_spec* hs, int proto);
 struct hi_io* hi_open_tcp(struct hiios* shf, struct hi_host_spec* hs, int proto);
