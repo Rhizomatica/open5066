@@ -74,7 +74,7 @@ sizeof:
 
 license.c: COPYING_sis5066_h
 	printf 'char* license = "' >license.c
-	printf 'Copyright (c) 2006 Sampo Kellomaki (sampo@iki.fi), All Rights Reserved.\\n\\' >>license.c
+	printf 'Copyright (c) 2006 Sampo Kellomaki (sampo@iki.fi), All Rights Reserved.\\n' >>license.c
 	sed -e 's/$$/\\n\\/' COPYING >>license.c
 	sed -e 's/$$/\\n\\/' COPYING_sis5066_h >>license.c
 	echo '";' >>license.c
