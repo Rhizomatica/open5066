@@ -1,9 +1,6 @@
 /* s5066d.c  -  NATO STANAG 5066 Annex A, B, and C daemon
  * Copyright (c) 2006 Sampo Kellomaki (sampo@iki.fi), All Rights Reserved.
- * This is confidential unpublished proprietary source code of the author.
- * NO WARRANTY, not even implied warranties. Contains trade secrets.
- * Distribution prohibited unless authorized in writing. See file COPYING.
- * $Id: s5066d.c,v 1.12 2006/06/18 00:44:51 sampo Exp $
+ * See file COPYING.
  *
  * 15.4.2006, started work over Easter holiday --Sampo
  * 22.4.2006, added more options over the weekend --Sampo

@@ -1,9 +1,7 @@
 # Makefile  -  How to build NATO STANAG 5066 Annex A, B, and C daemon
 # Copyright (c) 2006 Sampo Kellomaki (sampo@iki.fi), All Rights Reserved.
-# This is confidential unpublished proprietary source code of the author.
-# NO WARRANTY, not even implied warranties. Contains trade secrets.
-# Distribution prohibited unless authorized in writing. See file COPYING.
-# $Id: Makefile,v 1.18 2006/06/18 21:06:30 sampo Exp $
+# See file COPYING.
+#
 # Build so far only tested on Linux. This makefile needs gmake-3.78 or newer.
 #
 # Usage:   make              # Linux

@@ -1,9 +1,6 @@
 /* smtp.c  -  Simple Mail Transfer Protocol, RFC822
  * Copyright (c) 2006 Sampo Kellomaki (sampo@iki.fi), All Rights Reserved.
- * This is confidential unpublished proprietary source code of the author.
- * NO WARRANTY, not even implied warranties. Contains trade secrets.
- * Distribution prohibited unless authorized in writing. See file COPYING.
- * $Id: smtp.c,v 1.10 2006/05/26 11:47:32 nito Exp $
+ * See file COPYING.
  *
  * 15.4.2006, started work over Easter holiday --Sampo
  * 25.4.2006, Viva a revolução! Developed SMTP reception to HMTP proxy side --Sampo

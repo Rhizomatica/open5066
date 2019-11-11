@@ -1,9 +1,6 @@
 /* sis.c  -  NATO STANAG 5066 Annex A Processing
  * Copyright (c) 2006 Sampo Kellomaki (sampo@iki.fi), All Rights Reserved.
- * This is confidential unpublished proprietary source code of the author.
- * NO WARRANTY, not even implied warranties. Contains trade secrets.
- * Distribution prohibited unless authorized in writing. See file COPYING.
- * $Id: sis.c,v 1.10 2006/05/16 22:17:01 sampo Exp $
+ * See file COPYING.
  *
  * 15.4.2006, started work over Easter holiday --Sampo
  * 22.4.2006, complete unidata sending over the weekend --Sampo

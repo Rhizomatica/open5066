@@ -1,9 +1,6 @@
 /* hiios.c  -  Hiquu I/O Engine I/O shuffler
  * Copyright (c) 2006 Sampo Kellomaki (sampo@iki.fi), All Rights Reserved.
- * This is confidential unpublished proprietary source code of the author.
- * NO WARRANTY, not even implied warranties. Contains trade secrets.
- * Distribution prohibited unless authorized in writing. See file COPYING.
- * $Id: hiios.c,v 1.10 2006/05/24 09:42:11 nito Exp $
+ * See file COPYING.
  *
  * 15.4.2006, created over Easter holiday --Sampo
  *

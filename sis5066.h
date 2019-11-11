@@ -1,24 +1,25 @@
 #ifndef _SIS5066_H
 #define _SIS5066_H
 /*
- * $Id: sis5066.h,v 1.2 2006/05/24 04:26:00 sampo Exp $ 
  * Definitons for the Subnetwork Interface Sublayer of the
  * STANAG 5066 Version 1.2 standard.  STANAG 5066 is a profile 
  * for High Frequency (HF) Radio Data Communications.
- * 
- * Copyrights (c) 1999/2000 NATO C3 Agency, CSD-R, 
- *                          Radio Protocols Lab                                    
+ *
+ * Copyrights (c) 1999/2000 NATO C3 Agency, CSD-R,
+ *                          Radio Protocols Lab
  *                          http://www.nc3a.nato.int/
- * 
- * Written by Jan-Willem Smaal <Jan-Willem.Smaal@nc3a.nato.int> 
+ *
+ * Written by Jan-Willem Smaal <Jan-Willem.Smaal@nc3a.nato.int>
  * (student TH-Rijswijk) during a traineeship at the NC3A.
+ *
+ * See file COPYING_sis5066_h.
  */
 
-/* 
- * ------------------------------------------------------- 
- *          PLEASE MODIFY THE LINES BELOW 
- * Please set at most one of these defines to '1' 
- * ------------------------------------------------------- 
+/*
+ * -------------------------------------------------------
+ *          PLEASE MODIFY THE LINES BELOW
+ * Please set at most one of these defines to '1'
+ * -------------------------------------------------------
  */
 
 #ifdef __WIN32__
