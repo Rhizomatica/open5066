@@ -3,7 +3,7 @@ Open5066 - s5066d
 
 This is a fork of the Open5066, originally written by Sampo Kellomaki.
 
-<<abstract:
+Abstract
 
 Open5066 is an open source implementation of NATO NC3A STANAG 5066
 protocol stack for HF radio communications. It aims to implement
@@ -17,10 +17,8 @@ open source projects.
 
 Concrete embodiment of Open5066 is the s5066d daemon.
 
->>
+1. Status
 
-1 Status
-========
 
 Project was started in April 2006 and is in very early phase. Major
 feature enhancements and debugging is going on. Unless you have C
@@ -34,7 +32,8 @@ two we expect to have a system that is usable in limited ways.
 We follow the philosophy of "release early, release often". We are now
 in the early part.
 
-<<table: S-5066 Features
+S-5066 Features
+
 Status  Feature
 ======= =======================================================
 80%     I/O engine, command line interface, and daemon code
@@ -58,17 +57,15 @@ Status  Feature
 0%      Soft-modem    
 >>
 
-2 Howto
-=======
+2. Howto
 
 2.1 Compiling and Installation
-------------------------------
 
-At the moment only Linux 2.6 and Solaris 8 are supported. We use
+At the moment only Linux 2.6 (an onwards) and Solaris 8 are supported. We use
 epoll(4) so porting to other UNIX will require some effort.
 
-  tar xvzf open5066-0.1.tgz
-  cd open5066-0.5
+  git clone https://github.com/DigitalHERMES/open5066.git
+  cd open5066
   make
   cp s5066d /usr/sbin
 
@@ -87,17 +84,7 @@ the path, you MUST also change the definition of the SYSROOT variable
 inside the make file. See gcc documentation for further instructions
 on creating cross compilers if you are interested in this approach.
 
-2.1.1 Linux-ix86 using tcc-0.9.23
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Compilation using TinyCC (see http://fabrice.bellard.free.fr/tcc/) is supported.
-
-  CC=tcc LD=tcc make -e
-
-While it will compile all right, it seems it does not quite run allright :-(
-
 2.2 Running
------------
 
 You can pass mail between two nodes by doing following
 
@@ -166,13 +153,10 @@ Needless to say, you will need to be pretty good at your mail server
 configuration to pull this off. Please do not ask me how to configure
 them: consult your mail server documentation.
 
-<<newpage: >>
 
-3 s5066d - The STANAG 5066 Daemon Documentation
-===============================================
+3. s5066d - The STANAG 5066 Daemon Documentation
 
 3.1 Invocation
---------------
 
   Usage: s5066d [options] PROTO:REMOTEHOST:PORT
          echo secret | s5066d -p sis::5066 -c AES256 -k 0 dts:quebec.cellmail.com:5067
@@ -251,7 +235,6 @@ contact.  Typical ports to use
 (*** TBW)
 
 3.2 SIS Server
---------------
 
 Main function of s5066d is to relay SIS primitives from a TCP socket
 to DTS connection (which also may be TCP, but will eventually be HF
@@ -264,7 +247,6 @@ can be accomplished with the following command line:
   s5066d -p sis::5066 -p dts::5067 dts:remote.theirdom.com:5067
 
 3.2 HMTP Gateway Node
----------------------
 
 High Frequecy Mail Transfer Protocol (Annex F) gateway can be created by
 configuring s5006d to listen to SMTP (Simple Mail Transfer Protocol, RFC2821)
@@ -273,7 +255,6 @@ and then contact the SIS
   s5066d -p smtp::25 sis:localhost:5066 smtp:mail.mydomain.com:25
 
 3.3 Testing
------------
 
 Effectively create back-to-back gateway that talks to itself:
 
@@ -293,8 +274,7 @@ Full test setup
 
 See: ./setup1.sh for a way to lauch all necessary servers.
 
-4 Architecture
-==============
+4. Architecture
 
 <<dot: s5066d-arch: Module structure of s5066d
 rankdir=BT
@@ -353,7 +333,6 @@ connect -> dts_dec [style=invis]
 >>
 
 4.1 Connection Management
--------------------------
 
 The hiios engine is used. Every connection (io object) MUST be
 associated with a file descriptor. The memory for the connection is
@@ -363,21 +342,18 @@ memory array, you must not close a file descriptor until you are
 fully done with all the memory associated with it.
 
 4.2 PDU Management
-------------------
 
 Allocate from preallocated pools.
 
 Reference counted? Garbage collected?
 
 4.3 todo_queue
---------------
 
 1. polling inserts the io objects that are eligble for I/O
 2. also PDUs can be inserted if they require further processing
 3. worker threads eat from the todo_queue and dispatch
 
 4.4 Detecting that I/O is possible
-----------------------------------
 
 * epoll(4) on Linux 2.6
   - edge triggered events
@@ -387,7 +363,6 @@ Reference counted? Garbage collected?
   - To Be Investigated
 
 4.5 Some Open Issues
---------------------
 
 * Remote management
   - remotes are given on command line, but should not really be opened immediately
@@ -399,10 +374,8 @@ Reference counted? Garbage collected?
 * Handling sidebars
 
 5 Protocol Processing
-=====================
 
 5.1 Protocol TODO
------------------
 
 * Segmentation of HMTP at SIS interface (currently entire HMTP message
   has to fit in one S_PDU wihout segmenting)
@@ -413,13 +386,10 @@ Reference counted? Garbage collected?
 * expedited modes
 
 5.2 DTS
--------
 
 5.3 SIS
--------
 
 5.4 SMTP Client Processing
---------------------------
 
 When a HMTP connection arrives from SIS layer, a connection is
 established to destination SMTP server which must have been specified
@@ -464,7 +434,6 @@ destination, both of which are supplied on command line. Supplying
 more than one of each will produce unpredicatble results.
 
 5.5 SMTP Server Processing
---------------------------
 
 When a SMTP connection is accepted from another SMTP server, we need
 to play the pleasantries (EHLO, etc.) until we get to the point of the
@@ -516,8 +485,7 @@ Value Symbol Who     Action
 18    END    read    Wait for QUIT (which probably was already in the buffer) and send 221 bye. If we get MAIL FROM instead, continue processing at state MAIN (12).
 >>
 
-6 Simple Routing
-================
+6. Simple Routing
 
 s5066d implements<<footnote: Release 0.1 does not implement routing
 yet.>> routing by decoding DTS packets and using destination node
@@ -570,8 +538,9 @@ local NVIS coverage and sends it using that channel.
 > The s5066d routing capability, despite being very simple, is very
 > powerful and allows any node on the globe to reach any other node.
 
-7 Resources
-===========
+7. Resources
+
+NEEDS UPDATE!
 
 S5066 site:: https://elayne.nc3a.nato.int/ (needs password for most interesting stuff)
 Project home:: http://open5066.org/
@@ -583,8 +552,7 @@ CVS access:: None. If you contribute a lot, I can create you nonanonymous access
 This document as PDF:: http://open5066.org/open5066.pdf
 This document as HTML:: http://open5066.org/open5066-frame.html
 
-8 S-5066 Doubts
-===============
+8. S-5066 Doubts
 
 If someone could answer following questions, or improve the S-5066
 spec, I would be grateful.
@@ -608,8 +576,7 @@ spec, I would be grateful.
    third paragraph. The actual message can not be pipelined
    with DATA. However it can be pipelined with QUIT.
 
-9 License and Disclaimers
-=========================
+9. License and Disclaimers
 
 Copyright (c) 2006 Sampo Kellomäki (sampo@iki.fi), All Rights Reserved.
 
@@ -676,12 +643,9 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
 
-<<references:
+References:
 
 [RFC2821] SMTP
 
 [RFC2197] SMTP pipelining extension
 
->>
-
-<<EOF: >>
