@@ -11,6 +11,7 @@
 #include "errmac.h"
 #include "s5066.h"
 #include "sis5066.h"    /* from libnc3a, see COPYING_sis5066_h */
+#include "smtp.h"
 
 #include <ctype.h>
 #include <memory.h>
