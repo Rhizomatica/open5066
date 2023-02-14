@@ -15,7 +15,7 @@ implement a softmodem for some waveforms such as S-4285 or S-4529, or
 it may evolve a smooth interface to integrate softmodems from other
 open source projects.
 
-Concrete embodiment of Open5066 is the s5066d daemon. See [[https://github.com/Rhizomatica/open5066/blob/master/open5066.pdf][open5066.pdf]] for more information.
+Concrete embodiment of Open5066 is the s5066d daemon. See https://github.com/Rhizomatica/open5066/blob/master/open5066.pdf for more information.
 
 1. Status
 
